@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
-var speed = 300
+var speed = rand_range(300,900)
 var velocity = Vector2.ZERO
 onready var target = get_node("../Player")
+var deadfx = preload("res://scenes/Deathfx.tscn")
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
@@ -18,3 +19,6 @@ func _on_screen_exited():
 func _on_Enemybox_area_entered(area):
 	if area.is_in_group("shield"):
 		queue_free()
+		var dinst = deadfx.instance()
+		get_parent().add_child(dinst)
+		dinst.global_position = global_position
