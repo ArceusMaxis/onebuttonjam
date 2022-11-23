@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/bg.png" type="Texture" id=1]
 [ext_resource path="res://scripts/background.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/Boxy-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scripts/Control.gd" type="Script" id=6]
 [ext_resource path="res://scripts/Rip.gd" type="Script" id=7]
+[ext_resource path="res://music/death.ogg" type="AudioStream" id=8]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -33,6 +34,154 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="Theme" id=8]
 default_font = SubResource( 7 )
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Control/Label:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 233.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Control/Label:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 296.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Control/Label:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Control/Label:rect_scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Control/Label:rect_scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Control/false button:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Control/RichTextLabel:rect_rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "ripanim"
+length = 2.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Control/Label:rect_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -7.7, -0.25, 0, 0.25, 0, -5.96046e-08, -0.25, 0, 0.25, 0, 7.7, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Control/Label:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 233.5, -0.25, 0, 0.25, 0, 233.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Control/Label:rect_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 296.5, -0.25, 0, 0.25, 0, 296.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Control/Label:rect_scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Control/Label:rect_scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Control/false button:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -3, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1.5, 2 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Control/RichTextLabel:rect_rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 )
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 7 )
@@ -63,44 +212,52 @@ margin_left = -278.5
 margin_top = -3.5
 margin_right = 278.5
 margin_bottom = 77.5
+rect_pivot_offset = Vector2( 262.5, 36.5 )
 theme = ExtResource( 3 )
 text = "YOU DIED"
 align = 1
 valign = 1
 uppercase = true
 
-[node name="button" type="TextureButton" parent="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -152.0
-margin_top = 191.0
-margin_right = 152.0
-margin_bottom = 263.0
-theme = ExtResource( 3 )
-action_mode = 0
-texture_normal = ExtResource( 4 )
-expand = true
+[node name="false button" type="Sprite" parent="Control"]
+position = Vector2( 520, 544 )
+scale = Vector2( 4.28125, 1.8125 )
+texture = ExtResource( 4 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/button"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -120.0
-margin_top = -22.0
-margin_right = 121.0
-margin_bottom = 25.0
+margin_left = -118.0
+margin_top = 218.0
+margin_right = 123.0
+margin_bottom = 265.0
+rect_pivot_offset = Vector2( 118, 26 )
 rect_clip_content = false
 theme = SubResource( 8 )
 text = " TRY AGAIN"
 scroll_active = false
-deselect_on_focus_loss_enabled = false
+
+[node name="Button" type="Button" parent="Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 384.0
+margin_top = 512.0
+margin_right = 656.0
+margin_bottom = 576.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.35
 autostart = true
 
-[connection signal="pressed" from="Control/button" to="Control" method="_on_button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+mix_target = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "ripanim"
+anims/RESET = SubResource( 9 )
+anims/ripanim = SubResource( 10 )
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_Button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

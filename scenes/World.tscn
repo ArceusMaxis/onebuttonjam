@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/SpawnLoc.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/bg.png" type="Texture" id=4]
 [ext_resource path="res://scripts/background.gd" type="Script" id=5]
+[ext_resource path="res://music/Gameplay.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
@@ -71,5 +72,11 @@ position = Vector2( 512, 416 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 272 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -5.0
+autoplay = true
+mix_target = 2
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemy.png" type="Texture" id=2]
+[ext_resource path="res://music/pop.ogg" type="AudioStream" id=3]
 
 [node name="Enemy" type="KinematicBody2D" groups=["enemy"]]
 collision_layer = 3
@@ -19,6 +20,10 @@ texture = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 rotation = -4.89892e-05
 polygon = PoolVector2Array( 32, 0.00156765, 0.00117574, -24, -32, -0.00156765, -0.00117574, 24 )
+
+[node name="enemydie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -16.0
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_screen_exited"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]

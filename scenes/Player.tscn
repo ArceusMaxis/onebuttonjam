@@ -71,9 +71,10 @@ color = Color( 0, 0, 0, 1 )
 [node name="Hitbox" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
-polygon = PoolVector2Array( 0, -36, -17, -28, -37, 33, -30, 37, -21, 33, 21, 33, 30, 37, 37, 33, 17, -28 )
+scale = Vector2( 0.900401, 0.851793 )
+polygon = PoolVector2Array( 0, -38.7418, -17, -28, -34.4291, 34.0458, -31.0973, 35.2198, -21, 33, 21, 33, 31.0973, 35.2198, 34.4291, 32.8718, 17, -28 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 0, -36, -17, -28, -37, 33, -30, 37, -21, 33, 21, 33, 30, 37, 37, 33, 17, -28 )
+polygon = PoolVector2Array( 0, -33, -15, -24, -31, 29, -28, 30, -19, 28, 19, 28, 28, 30, 31, 28, 15, -24 )
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_entered"]

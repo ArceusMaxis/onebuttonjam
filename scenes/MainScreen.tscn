@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/button.png" type="Texture" id=1]
 [ext_resource path="res://assets/bg.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/Player.png" type="Texture" id=6]
 [ext_resource path="res://assets/enemy.png" type="Texture" id=7]
 [ext_resource path="res://scripts/MainScreen.gd" type="Script" id=8]
+[ext_resource path="res://music/menu.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
@@ -701,7 +702,7 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Enemydis" type="Sprite" parent="."]
 position = Vector2( 105, 86 )
-rotation = -0.853432
+rotation = -0.853431
 scale = Vector2( 2.25, 2.25 )
 texture = ExtResource( 7 )
 
@@ -729,6 +730,7 @@ margin_left = 238.5
 margin_top = 12.0
 margin_right = 785.5
 margin_bottom = 111.0
+rect_pivot_offset = Vector2( 268.5, 44 )
 theme = SubResource( 13 )
 text = " NO  OFFENSE"
 
@@ -736,3 +738,9 @@ text = " NO  OFFENSE"
 autoplay = "loop"
 anims/RESET = SubResource( 10 )
 anims/loop = SubResource( 11 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -9.0
+autoplay = true
+mix_target = 2
