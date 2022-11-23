@@ -20,6 +20,7 @@ func _on_area_entered(area):
 		var dinst = deadfx.instance()
 		get_parent().add_child(dinst)
 		dinst.global_position = global_position
+		dinst.global_rotation = rotation - 90
 		
 	if area.is_in_group("player"):
 		get_tree().change_scene("res://scenes/Rip.tscn")
