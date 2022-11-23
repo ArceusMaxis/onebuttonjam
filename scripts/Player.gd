@@ -13,6 +13,3 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 
-func _on_Hitbox_entered(body):
-	if body.is_in_group("enemy"):
-		get_tree().change_scene("res://scenes/Rip.tscn")

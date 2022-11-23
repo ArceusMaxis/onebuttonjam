@@ -1,9 +1,10 @@
 extends Node2D
 
 var enemy = preload("res://scenes/Enemy.tscn")
+var spawntime = rand_range(0.25,1)
 
-func _ready():
-	pass
+func _process(_delta):
+	$SpawnTimer.wait_time = spawntime
 
 func _on_SpawnTimer_timeout():
 	var e_inst = enemy.instance()
