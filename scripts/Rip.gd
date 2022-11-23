@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	pass
+	$AudioStreamPlayer.play()
 
 
 func _on_Timer_timeout():

@@ -17,6 +17,7 @@ func _on_screen_exited():
 func _on_area_entered(area):
 	if area.is_in_group("shield"):
 		queue_free()
+		$enemydie.play()
 		var dinst = deadfx.instance()
 		get_parent().add_child(dinst)
 		dinst.global_position = global_position
